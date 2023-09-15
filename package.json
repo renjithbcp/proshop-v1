@@ -2,6 +2,7 @@
   "name": "proshop-v2",
   "version": "1.0.0",
   "description": "Mern Stack proshop",
+  "type": "module",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.3.1",
@@ -9,6 +10,7 @@
     "csstype": "^3.1.2",
     "dequal": "^2.0.3",
     "dom-helpers": "^5.2.1",
+    "express": "^4.18.2",
     "invariant": "^2.2.4",
     "js-tokens": "^4.0.0",
     "loose-envify": "^1.4.0",
@@ -28,10 +30,17 @@
     "uncontrollable": "^7.2.1",
     "warning": "^4.0.3"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  }
 }
